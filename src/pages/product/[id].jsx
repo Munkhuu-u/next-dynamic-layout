@@ -2,28 +2,23 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function OptionPage() {
-  console.log("OptionPage ajilllaj baina");
   const router = useRouter();
-  const [optPage, setOptPage] = useState();
   const { id } = router.query;
-
-  console.log(id);
+  const [todo, setTodo] = useState();
 
   useEffect(() => {
-    console.log("useEffect ajilllaj baina");
+    console.log("useEffect ajillaj biana");
     const getData = async () => {
-      console.log("getData ajilllaj baina");
-      console.log({ id });
+      console.log("getdata ajillaj biana");
       const res = await fetch(
         `https://jsonplaceholder.typicode.com/todos/${id}`
       );
-      console.log(res);
       const data = await res.json();
       console.log(data);
-      setOptPage(data);
+      setTodo(data);
     };
     if (id) {
-      getData();
+      getData;
     }
   }, [id]);
 
@@ -31,7 +26,14 @@ export default function OptionPage() {
 
   return (
     <div>
-      <h1>{optPage?.title}</h1>
+      <button
+        onClick={() => {
+          router.push("./product");
+        }}
+      >
+        go to Product page
+      </button>
+      <p>Title: {`${todo}`}</p>
     </div>
   );
 }

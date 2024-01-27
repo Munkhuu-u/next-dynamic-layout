@@ -1,17 +1,17 @@
-import React from "react";
-import { Router, useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 export default function Index() {
   const router = useRouter();
   return (
     <div>
-      <div>
-        <p>Product page</p>
-      </div>
-      <div className="flex justify-around">
-        <button onClick={() => router.push(`/prod/1`)}>ONE</button>
-        <button>TWO</button>
-        <button>THREE</button>
-      </div>
+      <p>YOU ARE IN PRODUCT PAGE</p>
+      <button
+        onClick={() => {
+          router.push("/product/1");
+        }}
+      >
+        option 1
+      </button>
     </div>
   );
 }

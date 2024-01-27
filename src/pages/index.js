@@ -1,10 +1,18 @@
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+
 export default function Home() {
   const router = useRouter();
   return (
     <div>
-      HOME page
-      <button onClick={() => router.push(`/prod`)}>{"-> prod page"}</button>
+      <p>HOME PAGE</p>
+      <button
+        onClick={() => {
+          router.push("/product");
+        }}
+      >
+        go to PRODUCTS
+      </button>
     </div>
   );
 }
