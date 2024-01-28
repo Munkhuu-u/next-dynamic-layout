@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function Home() {
   const router = useRouter();
   return (
     <div>
-      <p>HOME PAGE</p>
+      <h2>HOME PAGE</h2>
       <button
         onClick={() => {
-          router.push("/product");
+          router.push(`/product`);
         }}
       >
-        go to PRODUCTS
+        goto PRODUCT
       </button>
     </div>
   );
